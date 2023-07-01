@@ -1,0 +1,32 @@
+name: Reproduce issue
+
+on:
+  workflow_dispatch:
+
+jobs:
+  default:
+    strategy:
+      fail-fast: false
+      matrix:
+        scratch-def-config: ["config/project-scratch-def.json", "config/has-sample-data.json"]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18.12.1
+      - name: Install dependencies
+        run: |
+          yarn global add sfdx-cli
+      - name: Reproduce issue in Scatch Org
+        env:
+          SFDX_AUTH_URL_DEVHUB: ${{ secrets.SFDX_AUTH_URL_DEVHUB }}
+        run: |
+          sfdx org login sfdx-url -d -a devhub -f <(echo "${SFDX_AUTH_URL_DEVHUB}")
+          sfdx org create scratch -f ${{ matrix.scratch-def-config }} -d
+          sfdx project deploy start
+          sfdx apex run test -l RunLocalTests -w 10
+      - name: Delete scratch org
+        if: always()
+        run: |
+          sfdx org delete scratch -p
