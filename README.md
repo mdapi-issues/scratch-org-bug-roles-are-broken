@@ -24,6 +24,10 @@ System.DmlException: Update failed. First exception on row 0 with id 0055t000003
 
 > Failing here means the reproduction was successful (a unit test to assign the Role failed)
 
+## References
+
+- https://salesforce.stackexchange.com/questions/257286/sfdx-setting-role-for-user-user
+
 ## Workarounds
 
 - Deploy new Roles via Metadata
