@@ -32,3 +32,4 @@ System.DmlException: Update failed. First exception on row 0 with id 0055t000003
 
 - Deploy new Roles via Metadata
 - Recreate existing Roles
+- use `"hasSampleData": true`
