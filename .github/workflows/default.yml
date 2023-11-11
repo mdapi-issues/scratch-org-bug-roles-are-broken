@@ -17,7 +17,7 @@ jobs:
           node-version: 18.12.1
       - name: Install dependencies
         run: |
-          yarn global add sfdx-cli
+          yarn global add @salesforce/cli
       - name: Reproduce issue in Scatch Org
         env:
           SFDX_AUTH_URL_DEVHUB: ${{ secrets.SFDX_AUTH_URL_DEVHUB }}
