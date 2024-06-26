@@ -20,9 +20,12 @@ you'll get the following error:
 System.DmlException: Update failed. First exception on row 0 with id 0055t000003Ic5wAAC; first error: INVALID_CROSS_REFERENCE_KEY, invalid cross reference id: []
 ```
 
-[![Actions Status](https://github.com/mdapi-issues/broken-roles/workflows/Reproduce%20issue/badge.svg)](https://github.com/mdapi-issues/broken-roles/actions)
+[![Actions Status](https://github.com/mdapi-issues/scratch-org-bug-roles-are-broken/workflows/Reproduce%20issue/badge.svg)](https://github.com/mdapi-issues/scratch-org-bug-roles-are-broken/actions)
 
-> Failing here means the reproduction was successful (a unit test to assign the Role failed)
+> [!IMPORTANT]
+> A green status badge means the issue was successfully reproduced.
+>
+> A red status badge means the issue was fixed or the pipeline failed for another reason.
 
 ## References
 
