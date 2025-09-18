@@ -13,7 +13,7 @@ jobs:
           node-version-file: .node-version
       - name: Install dependencies
         run: |
-          npm install --global @salesforce/cli
+          npm install --ignore-scripts --global @salesforce/cli
       - name: Reproduce issue in Scratch Org without Sample Data
         env:
           SFDX_AUTH_URL_DEVHUB: ${{ secrets.SFDX_AUTH_URL_DEVHUB }}
@@ -35,7 +35,7 @@ jobs:
           node-version-file: .node-version
       - name: Install dependencies
         run: |
-          npm install --global @salesforce/cli
+          npm install --ignore-scripts --global @salesforce/cli
       - name: Cannot reproduce issue in Scratch Org with Sample Data
         env:
           SFDX_AUTH_URL_DEVHUB: ${{ secrets.SFDX_AUTH_URL_DEVHUB }}
